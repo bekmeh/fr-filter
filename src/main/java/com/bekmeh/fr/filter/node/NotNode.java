@@ -14,5 +14,15 @@ public class NotNode implements FilterNode<User> {
 	public boolean evaluate(final User objectToEvaluate) {
 		return !this.child.evaluate(objectToEvaluate);
 	}
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("( ");
+		sb.append(" NOT ");
+		sb.append(this.child.toString());
+		sb.append(" )");
+		return sb.toString();
+	}
 
 }

@@ -16,5 +16,16 @@ public class AndNode implements FilterNode<User> {
 	public boolean evaluate(final User objectToEvaluate) {
 		return this.right.evaluate(objectToEvaluate) && this.left.evaluate(objectToEvaluate);
 	}
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("( ");
+		sb.append(this.left.toString());
+		sb.append(" AND ");
+		sb.append(this.right.toString());
+		sb.append(" )");
+		return sb.toString();
+	}
 
 }
