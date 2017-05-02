@@ -8,9 +8,14 @@ public class LessThanNode implements FilterNode<User> {
 	
 	private String key;
 	private Object value;
+	
+	public LessThanNode(final String key, final Object value) {
+		this.key = key;
+		this.value = value;
+	}
 
 	@Override
-	public boolean evaluate(User objectToEvaluate) {
+	public boolean evaluate(final User objectToEvaluate) {
 		final BigInteger objectValue = new BigInteger(objectToEvaluate.get(this.key).toString());
 		final BigInteger comparisonValue = new BigInteger(this.value.toString());
 		if (objectToEvaluate.containsKey(this.key)) {
