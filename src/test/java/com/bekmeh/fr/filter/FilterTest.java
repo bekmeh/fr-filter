@@ -15,16 +15,22 @@ import com.bekmeh.fr.filter.node.LessThanNode;
 import com.bekmeh.fr.filter.node.NotNode;
 import com.bekmeh.fr.filter.node.OrNode;
 import com.bekmeh.fr.filter.node.RegexNode;
-import com.bekmeh.fr.resource.User;
+import com.bekmeh.fr.resource.Resource;
 
+/**
+ * Unit tests for {@link Filter}.
+ * 
+ * @author bekmeh
+ *
+ */
 public class FilterTest {
 
     private static final String HEIGHT_FIELD = "height";
     private static final String AGE_FIELD    = "age";
     private static final String NAME_FIELD   = "name";
     private static final String NAME_REGEX   = "Joh?n Smithe?";
-    private User                testUser1    = new User();
-    private User                testUser2    = new User();
+    private Resource                testUser1    = new Resource();
+    private Resource                testUser2    = new Resource();
 
     @Before
     public void setUp() {

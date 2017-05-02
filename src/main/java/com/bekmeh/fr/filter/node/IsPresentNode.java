@@ -1,8 +1,15 @@
 package com.bekmeh.fr.filter.node;
 
-import com.bekmeh.fr.resource.User;
+import com.bekmeh.fr.resource.Resource;
 
-public class IsPresentNode extends FilterNode<User> {
+/**
+ * {@link FilterNode} which, when evaluated, determines whether the resource
+ * key/value is present.
+ * 
+ * @author bekmeh
+ *
+ */
+public class IsPresentNode extends FilterNode<Resource> {
 
     private String key;
 
@@ -11,7 +18,7 @@ public class IsPresentNode extends FilterNode<User> {
     }
 
     @Override
-    public boolean evaluate(final User objectToEvaluate) {
+    public boolean evaluate(final Resource objectToEvaluate) {
         return objectToEvaluate.containsKey(this.key);
     }
 

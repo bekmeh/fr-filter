@@ -1,16 +1,23 @@
 package com.bekmeh.fr.filter.node;
 
-import com.bekmeh.fr.resource.User;
+import com.bekmeh.fr.resource.Resource;
 
-public class OrNode extends FilterNode<User> {
+/**
+ * {@link FilterNode} which, when evaluated, determines the result of the left
+ * branch || result of the right branch.
+ * 
+ * @author bekmeh
+ *
+ */
+public class OrNode extends FilterNode<Resource> {
 
-    public OrNode(final FilterNode<User> left, final FilterNode<User> right) {
+    public OrNode(final FilterNode<Resource> left, final FilterNode<Resource> right) {
         this.left = left;
         this.right = right;
     }
 
     @Override
-    public boolean evaluate(final User objectToEvaluate) {
+    public boolean evaluate(final Resource objectToEvaluate) {
         return this.right.evaluate(objectToEvaluate) || this.left.evaluate(objectToEvaluate);
     }
 

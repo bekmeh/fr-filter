@@ -2,9 +2,16 @@ package com.bekmeh.fr.filter.node;
 
 import java.math.BigDecimal;
 
-import com.bekmeh.fr.resource.User;
+import com.bekmeh.fr.resource.Resource;
 
-public class LessThanNode extends FilterNode<User> {
+/**
+ * {@link FilterNode} which, when evaluated, determines whether the resource
+ * value is less than the comparate value supplied in the constructor.
+ * 
+ * @author bekmeh
+ *
+ */
+public class LessThanNode extends FilterNode<Resource> {
 
     private String key;
     private Object value;
@@ -15,7 +22,7 @@ public class LessThanNode extends FilterNode<User> {
     }
 
     @Override
-    public boolean evaluate(final User objectToEvaluate) {
+    public boolean evaluate(final Resource objectToEvaluate) {
         final BigDecimal objectValue = new BigDecimal(objectToEvaluate.get(this.key).toString());
         final BigDecimal comparisonValue = new BigDecimal(this.value.toString());
         if (objectToEvaluate.containsKey(this.key)) {

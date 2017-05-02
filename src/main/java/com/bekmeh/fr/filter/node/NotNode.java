@@ -1,17 +1,24 @@
 package com.bekmeh.fr.filter.node;
 
-import com.bekmeh.fr.resource.User;
+import com.bekmeh.fr.resource.Resource;
 
-public class NotNode extends FilterNode<User> {
+/**
+ * {@link FilterNode} which, when evaluated, determines the inverse of the
+ * result of the child branch.
+ * 
+ * @author bekmeh
+ *
+ */
+public class NotNode extends FilterNode<Resource> {
 
-    private FilterNode<User> child;
+    private FilterNode<Resource> child;
 
-    public NotNode(final FilterNode<User> child) {
+    public NotNode(final FilterNode<Resource> child) {
         this.child = child;
     }
 
     @Override
-    public boolean evaluate(final User objectToEvaluate) {
+    public boolean evaluate(final Resource objectToEvaluate) {
         return !this.child.evaluate(objectToEvaluate);
     }
 
