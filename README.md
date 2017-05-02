@@ -1,6 +1,6 @@
 # fr-filter
 
-This is a Filter API which can be used in two different ways. 
+This is a Filter API which determines whether a resource matches certain criteria.
 
 ## Example Usage
 
@@ -12,6 +12,8 @@ user.put("age", 15);
 user.put("height", 6);
 filter.matches(user); // Should evaluate to true
 ```
+In this case, the methods can be chained indefinitely.
+
 #### Method 2
 ```java
 Filter filter = new Filter(
